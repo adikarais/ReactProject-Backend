@@ -1,21 +1,21 @@
-import { Router } from "express";
-import { createCategory, deteleCategory, getAllCategory, getCategoryById, updateCategory } from "../controllers/CategoryController.mjs";
+import { Router } from 'express';
+import { getAllProfil, getProfilById, createProfil, updateProfil, deteleProfil } from '../controllers/CategoryController.mjs';
 
-const CategoryRoutes = Router()
+const CategoryRoutes = Router();
 
 // Ambil semua kategori
-CategoryRoutes.get('/', getAllCategory)
+CategoryRoutes.get('/', getAllProfil);
 
 // Ambil kategori by ID
-CategoryRoutes.get('/:id', getCategoryById)
+CategoryRoutes.get('/:id', getProfilById);
 
 // Buat Kategori Baru
-CategoryRoutes.post('/', createCategory)
+CategoryRoutes.post('/', createProfil);
 
 // Update category
-CategoryRoutes.put('/:id', updateCategory)
+CategoryRoutes.put('/:id', updateProfil);
 
 // Delete Category
-CategoryRoutes.delete('/:id', deteleCategory)
+CategoryRoutes.delete('/:id', deteleProfil);
 
-export default CategoryRoutes
+export default CategoryRoutes;
