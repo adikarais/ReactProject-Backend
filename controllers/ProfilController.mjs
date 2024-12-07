@@ -11,7 +11,7 @@ import database from '../config/database.mjs';
 // };
 export const getAllProfil = async (req, res, next) => {
   try {
-    const [results] = await database.query(`SELECT id, nama, email, password, img FROM profil`);
+    const [results] = await database.query(`SELECT id, nama, email, password, username, biografi, link_facebook, link_discord, favorit_count, profile_picture FROM users`);
     res.json({ data: results });
   } catch (error) {
     console.log(`DB Error in get all Profil data` + error);
